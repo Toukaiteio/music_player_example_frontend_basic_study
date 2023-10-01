@@ -103,6 +103,7 @@ BrightChanger=async (to)=>{
                 LastBGBright+=0.01 * _ops;
                 BGCOVER.style.backdropFilter=`blur(3px) sepia(32%) grayscale(70%) brightness(${(LastBGBright).toFixed(3)})`;
                 if(Math.abs(LastBGBright-to)<0.05){
+                    // console.log(Math.abs(LastBGBright-to));
                     LastBGBright=to;
                     BGCOVER.style.backdropFilter=`blur(3px) sepia(32%) grayscale(70%) brightness(${(LastBGBright).toFixed(3)})`;
                     BGBrightChangerState=true;
@@ -118,14 +119,15 @@ function CanvasPainter(){
     const _canvas_height=CANVAS_EL.height;
     let sum_aver=0;
     CANVAS_CTX.clearRect(0, 0, _canvas_width, _canvas_height);
-    for (const __i in CanvasAnimation._wave_points) {
-        let value = CanvasAnimation._wave_points[__i] / 5;
+    for (let __i in CanvasAnimation._wave_points) {
+        const value = CanvasAnimation._wave_points[__i] / 5;
         sum_aver+=value / CanvasAnimation._wave_points.length;
         let posX=parseInt(__i)*2;
         CANVAS_CTX.beginPath();
         CANVAS_CTX.lineWidth=2;
         CANVAS_CTX.strokeStyle = '#ffffffff'
         CANVAS_CTX.moveTo(posX,_canvas_height/2 + value);
+        // if(posX<0) console.log(posX,_canvas_height);
         CANVAS_CTX.lineTo(posX,(_canvas_height / 2) - value);
         CANVAS_CTX.stroke();
         CANVAS_CTX.closePath();
