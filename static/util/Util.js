@@ -103,7 +103,6 @@ BrightChanger=async (to)=>{
                 LastBGBright+=0.01 * _ops;
                 BGCOVER.style.backdropFilter=`blur(3px) sepia(32%) grayscale(70%) brightness(${(LastBGBright).toFixed(3)})`;
                 if(Math.abs(LastBGBright-to)<0.05){
-                    // console.log(Math.abs(LastBGBright-to));
                     LastBGBright=to;
                     BGCOVER.style.backdropFilter=`blur(3px) sepia(32%) grayscale(70%) brightness(${(LastBGBright).toFixed(3)})`;
                     BGBrightChangerState=true;
@@ -127,7 +126,6 @@ function CanvasPainter(){
         CANVAS_CTX.lineWidth=2;
         CANVAS_CTX.strokeStyle = '#ffffffff'
         CANVAS_CTX.moveTo(posX,_canvas_height/2 + value);
-        // if(posX<0) console.log(posX,_canvas_height);
         CANVAS_CTX.lineTo(posX,(_canvas_height / 2) - value);
         CANVAS_CTX.stroke();
         CANVAS_CTX.closePath();
