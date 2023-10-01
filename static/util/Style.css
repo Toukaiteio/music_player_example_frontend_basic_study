@@ -1,0 +1,300 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+@font-face {
+    font-family: "Anzumoji";
+    src: url("../font/anzumoji.ttf") format("truetype");
+}
+@font-face {
+    font-family: "BaseBul";
+    src: url("../font/basebul-2o9ve.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Borela";
+    src: url("../font/borela-yw6qv.ttf") format("truetype");
+}
+@font-face {
+    font-family: "XingKai";
+    src: url("../font/YeZiGongChangJingHongXingKai-2.ttf") format("truetype");
+}
+.FontTest{
+    width: 100%;
+    text-align: center;
+}
+.FontItem{
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    font-weight: bolder;
+    font-size: 36px;
+    vertical-align: middle;
+    text-align: center;
+}
+.Anzumoji{
+    font-family: 'Anzumoji', sans-serif;
+}
+.BaseBul{
+    font-family: 'BaseBul', sans-serif;
+}
+.Borela{
+    font-family: 'Borela', sans-serif;
+}
+.XingKai{
+    font-family: 'XingKai', sans-serif;
+}
+.PageMainContainer{
+    height: 100vh;
+    width: 100vw;
+    min-width: 1800px;
+    min-height: 900px;
+    background-image: url(../media/Cover.jpg);
+    background-size: cover;
+    /* filter: ; */
+    position: relative;
+    z-index: 8;
+}
+.BG_Cover{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    min-width: 1800px;
+    min-height: 900px;
+    background-color: rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(3px) sepia(32%) grayscale(70%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+}
+.PlayerBody{
+    height: 100vh;
+    width: 100vw;
+    min-width: 1800px;
+    min-height: 900px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* padding-top: 10%; */
+}
+.CoverItem{
+    z-index: 100;
+    position: absolute;
+    top: 10%;
+    left: 18%;
+    width: 46%;
+    height: 80%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 4px solid #B2B2B2;
+}
+.AlbumInfo{
+    z-index: 99;
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    width: 48%;
+    height: 40%;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    transform: rotateZ(90deg);
+}
+.AlbumContainer{
+    height: 100%;
+    width: 100%;
+    /* text-indent: 12px; */
+    color: white;
+}
+.AlbumContainer .AlbumTitle{
+    width: fit-content;
+    background-color: #B2B2B2;
+    mix-blend-mode:multiply;
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    transition: width 1s;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.AlbumContainer .divider{
+    height: 3px;
+    width: 60%;
+    background-color: white;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.AlbumContainer .AlbumIntro{
+    font-size: 42px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.AlbumIntro .line{
+    margin-bottom: 4px;
+    display: inline-flex;
+    letter-spacing: 4px;
+    width: fit-content;
+    align-items: center;
+    background-color: #B2B2B2;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 3px;
+}
+.ContentContainer{
+    height: 100%;
+    width: 100%;
+}
+.CoverDisplayer{
+    background-image: url(../media/Cover.jpg);
+    background-size: cover;
+    background-position:50% 0%;
+    width: 100%;
+    height: 60%;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+.InfoItem{
+    box-sizing: border-box;
+    padding-top: 6px;
+    
+    color: black;
+    width: 100%;
+    height: 40%;
+}
+.InfoItemContainer{
+    width: 100%;
+    height: 100%;
+    background-color: #B2B2B2;
+    box-sizing: border-box;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.SongTitle{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 45px;
+    transition: padding 1s;
+}
+.CanvasContainer{
+    flex: 1;
+    width: 100%;
+    height: 0;
+}
+.PlayBtn{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 60%;
+    transform: translateX(50%) translateY(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    background: #B2B2B2;
+    box-sizing: border-box;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background 0.5s;
+    user-select: none;
+}
+.PlayBtn.Playing{
+    background: white;
+}
+.PlayBtn.Playing svg{
+    fill:#B2B2B2;
+    color: #B2B2B2;
+    margin-left: 0px;
+}
+.PlayBtn:hover{
+    background: white;
+}
+.PlayBtn:hover svg{
+    fill:#B2B2B2;
+    color: #B2B2B2;
+}
+.PlayBtn svg{
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    transition: fill 1s,color 1s;
+    margin-left: 8px;
+}
+.StayInMiddle{
+    padding-top: 13%;
+    transform: translateY(-5%);
+}
+.ToasterContainer{
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Toaster{
+    /* box-sizing: border-box; */
+    width: 0px;
+    height: 0px;
+    border-left: 6px solid black;
+    border-right: 6px solid black;
+    border-top:1px solid black ;
+    border-bottom:1px solid black ;
+    background-color: #B2B2B2;
+    color: white;
+    font-size: 42px;
+    padding-left: 56px;
+    padding-right: 56px;
+    line-height: 62px;
+    vertical-align: middle;
+    font-family: 'XingKai',sans-serif;
+    overflow: hidden;
+    user-select: none;
+    text-align: center;
+    height: 62px;
+}
+.notShowup{
+    display: none;
+}
+@keyframes lenthen {
+    0%{
+        width: 0px;
+        opacity: 0.2;
+    }
+    100%{
+        width: 90%;
+        opacity: 1;
+    }
+}
+@keyframes shorten {
+    0%{
+        width: 90%;
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        border: none;
+        width: 35%;
+        opacity: 0.2;
+    }
+}
+.noMessage{
+    animation: shorten 1.5s linear forwards;
+    /* display: none; */
+    pointer-events: none;
+    
+}
+.onMessage{
+    animation: lenthen 1.5s linear forwards;
+}
